@@ -47,9 +47,9 @@ app.get("/janken", (req, res) => {
   if ((hand == "グー" && cpu == "グー")||
   (hand == "チョキ" && cpu == "チョキ")||
   (hand == "パー" && cpu == "パー")){
-    let judgement = '引き分け';
+     judgement = '引き分け';
   }
-  else { let judgement = '引き分け'; }
+  else {  judgement = '引き分け'; }
 
   
   total += 1;
