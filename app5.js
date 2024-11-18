@@ -63,4 +63,47 @@ app.get("/janken", (req, res) => {
   res.render( 'janken', display );
 });
 
+app.get("/coin", (req, res) => {
+  let hand = req.query.hand;
+  let consecutive = Number( req.query.consecutive );
+  console.log( {hand, consecutive});
+  const num = Math.floor( Math.random() * 2 + 1 );
+  let cpu = '';
+  if( num==1 ){ cpu = '表';}
+  else if( num==2 ){ cpu = '裏';}
+  // ここに勝敗の判定を入れる
+  if (hand == cpu)
+    {
+      let decision = 'あたり';
+      consecutive += 1;
+    }
+  else {  decision = 'はずれ';
+          consecutive == 0;
+       }
+
+  const display = {
+    your: hand,
+    cpu: cpu,
+    decision: decision,
+    consecutive: consecutive
+  }
+  res.render( 'coin', display );
+});
+
+app.get("/division", (req, res) => {
+  let hand = req.query.hand;
+  console.log( {hand});
+  const num = Math.floor( Math.random() * 100 + 1 );
+  let remainder = '';
+  if( num % hand == 0 ){  remainder = '割り切れました';}
+  else { remainder  = '割り切れませんでした';}
+  
+  const display = {
+    your: hand,
+    num: num,
+    remainder: remainder,
+  }
+  res.render( 'division', display );
+});
+
 app.listen(8080, () => console.log("Example app listening on port 8080!"));

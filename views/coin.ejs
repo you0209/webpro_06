@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>コイントス</title>
+</head>
+<body>
+    <p>あなたが選んだのは<%= your %>です．</p>
+    <p>コンピュータは<%= cpu %>です．</p>
+    <p>判定：<%= decision %></p>
+    <p>現在<%= consecutive %>連続で正解しています．</p>
+    <hr>
+    <form action="/coin">
+        <input type="text" name="hand" required>
+        <label for="hand">次はどちらを選ぶ？</label>
+        <input type="hidden" name="consecutive" value="<%= consecutive %>">
+        <input type="submit" values="スタート">
+    </form>   
+</body>
+</html>
