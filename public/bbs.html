@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>掲示板</title>
+    <script src="./bbs.js" defer></script>
+    <link rel="stylesheet" href="./bbs.css">
+</head>
+<body>
+    <div id="bbs"></div>
+    <div>
+        <label for="name">名前：</label>
+        <input type="text" id="name">
+        <label for="name">メッセージ：</label>
+        <input type="text" id="message">
+        <button type="button" id="post">送信</button>
+    </div>
+    <div id="check">
+        <button type="button" id="check">投稿チェック</button>
+        <button type="button" id="reset">リセット</button>
+        <button type="button" id="delete-latest-btn">最新の投稿を削除</button>
+    </div>
+    <div id="replace-latest">
+        <input type="text" id="replace-message" placeholder="置き換える内容">
+        <button type="button" id="replace-latest-btn">最新の投稿を置き換え</button>
+    </div>
+    
+</body>
+</html>
